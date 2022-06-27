@@ -10,10 +10,10 @@ const promptUser = () => {
                 if (nameInput) {
                     return true;
                 } else {
-                    console.log ('Please enter your name!');
+                    console.log('Please enter your name!');
                     return false;
                 }
-                }
+            }
         },
         {
             type: 'input',
@@ -23,10 +23,28 @@ const promptUser = () => {
                 if (githubInput) {
                     return true;
                 } else {
-                    console.log ('Please enter your GitHub username!');
+                    console.log('Please enter your GitHub username!');
                     return false;
                 }
+            }
+        },
+        {
+            type: 'confirm',
+            name: 'confirmAbout',
+            message: 'Would you like to enter some information about yourself for an "About" section?',
+            default: true
+        },
+        {
+            type: 'input',
+            name: 'about',
+            message: 'Provide some infortmation about yourself:',
+            when: ({ confirmAbout }) => {
+                if (confirmAbout) {
+                    return true;
+                } else {
+                    return false;
                 }
+            }
         },
         {
             type: 'input',
@@ -58,11 +76,11 @@ Add a New Project
                     if (nameInput) {
                         return true;
                     } else {
-                        console.log ('Please enter your project name!');
+                        console.log('Please enter your project name!');
                         return false;
                     }
-                    }
-              
+                }
+
             },
             {
                 type: 'input',
@@ -72,10 +90,10 @@ Add a New Project
                     if (descriptionInput) {
                         return true;
                     } else {
-                        console.log ('Please enter your project description!');
+                        console.log('Please enter your project description!');
                         return false;
                     }
-                    }
+                }
             },
             {
                 type: 'checkbox',
@@ -91,10 +109,10 @@ Add a New Project
                     if (linkInput) {
                         return true;
                     } else {
-                        console.log ('Please enter your project link!');
+                        console.log('Please enter your project link!');
                         return false;
                     }
-                    }
+                }
             },
             {
                 type: 'confirm',
